@@ -1,6 +1,8 @@
 package com.ebay.EBayProject;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.BeforeSuite;
@@ -27,6 +29,12 @@ public class EbayClass {
 		
 		Assert.assertEquals(actualTitle, expectedTitle);
 		System.out.println(actualTitle);
+	}
+	
+	
+	public void verifyPaypalLinkText() {
+		WebElement l = driver.findElement(By.linkText("PayPal"));
+		l.isDisplayed();
 	}
 	
 	public void tearDown() {
